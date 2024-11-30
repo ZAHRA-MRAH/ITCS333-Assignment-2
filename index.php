@@ -25,38 +25,43 @@ $data = json_decode($response, true);
 
 <head>
     <title>UOB student records</title>
-    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+
+    
 </head>
 
 <body>
-    <table class="striped">
-        <thead>
-            <tr>
-                <th>Year</th>
-                <th>Semester</th>
-                <th>The Programs</th>
-                <th>Nationality</th>
-                <th>Colleges</th>
-                <th>Number of Students</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <?php foreach ($data['results'] as $index => $record): ?>
+    <div class="container">
+        <h1>UOB student records</h1>
+        <div class="overflow-auto">
+        <table class="striped"">
+            <thead>
                 <tr>
-                    <td><?php echo $record['year']; ?></td>
-                    <td><?php echo $record['semester']; ?></td>
-                    <td><?php echo $record['the_programs']; ?></td>
-                    <td><?php echo $record['nationality']; ?></td>
-                    <td><?php echo $record['colleges']; ?></td>
-                    <td><?php echo $record['number_of_students']; ?></td>
+                <th scope="col">Year</th>
+                <th scope="col">Semester</th>
+                <th scope="col">The Programs</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Colleges</th>
+                <th scope="col">Number of Students</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-
-
-    </table>
-
+        </thead>    
+        
+            <tbody>
+                <?php foreach ($data['results'] as $index => $record): ?>
+                    <tr>
+                        <td><?php echo $record['year']; ?></td>
+                        <td><?php echo $record['semester']; ?></td>
+                        <td><?php echo $record['the_programs']; ?></td>
+                        <td><?php echo $record['nationality']; ?></td>
+                        <td><?php echo $record['colleges']; ?></td>
+                        <td><?php echo $record['number_of_students']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        </div>
+    </div>
 </body>
 
 </html>
