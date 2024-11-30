@@ -35,7 +35,7 @@ $data = json_decode($response, true);
     <div class="container">
         <h1>UOB student records</h1>
         <div class="overflow-auto">
-        <table class="striped"">
+        <table class="striped">
             <thead>
                 <tr>
                 <th scope="col">Year</th>
